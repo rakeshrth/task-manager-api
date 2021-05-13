@@ -1,18 +1,7 @@
 //this is where we initialize the express server.
 
-const express = require('express')
-require('./db/mongoose')
-const userRouter = require('./routers/user')
-const taskRouter = require('./routers/task')
-
-const app = express()
+const app = require('./app')
 const port = process.env.PORT 
-
-
-//this automatically parse incoming json to an object so we can access it in our request handlers
-app.use(express.json())
-app.use(userRouter)
-app.use(taskRouter)
 
 
 app.listen(port, () => {
